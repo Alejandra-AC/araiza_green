@@ -31,7 +31,7 @@ if ($source==1) {
   $result = $green->query($sql);
   $latest_id = $green->insert_id;
 
-  $sql_h = "INSERT INTO `historial`(`id_registro`, `id_servicio`, `fecha`) VALUES ('".$latest_id."',3,now())";
+  $sql_h = "INSERT INTO `historial`(`id_registro`, `id_servicio`, `fecha`) VALUES ('".$latest_id."',3, now())";
   $result_h = $green->query($sql_h);
 
   $link = "../registrado.php";
