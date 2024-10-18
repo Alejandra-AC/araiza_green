@@ -88,10 +88,10 @@ $row_condiciones = $result_condiciones->fetch_assoc();
                 <form action="./controlador/registrar.php" method="POST">
                 <input type="hidden" name="source" value="1"/>
                 <input type="hidden" name="hotel" value="<?php echo $hotel?>"/>
-                <input type="hidden" value="<?php echo $num_socio?>" name="num_socio"/>
+                <input type="hidden" value="<?php echo $num_socio?>" name="numero_socio"/>
                 <input type="hidden" value="<?php echo $correo?>" name="correo"/>
                 <input type="hidden" value="<?php echo $nombre?>" name="nombre"/>
-                <input type="hidden" value="<?php echo $hab?>" name="hab"/>
+                <input type="hidden" value="<?php echo $hab?>" name="num_hab"/>
                 <input type="hidden" value="<?php echo $idioma?>" name="lang"/>
                 <div class="col-sm-12 col-md-12 text-center mb-3">
                   <button type="submit" class="btn btn-lg btn-success"><?php echo $row_condiciones['boton']; ?></button>

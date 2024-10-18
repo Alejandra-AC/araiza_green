@@ -200,7 +200,7 @@ $row = $result->fetch_assoc();
                   </div>
 
                   <div class="col-sm-12 col-md-12 text-center mt-5 mb-3">
-                    <button id="siguiente" class="btn btn-lg btn-success" type="submit"><?php echo $row['boton']; ?></button>
+                    <button id="siguiente" class="btn btn-lg btn-success" type="submit">Registrar</button>
                   </div>
                 </form>
               </div>

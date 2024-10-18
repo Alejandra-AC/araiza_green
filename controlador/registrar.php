@@ -5,10 +5,10 @@ include "conexion.php";
 $source    = $_POST['source'];
 $lang      = $_POST['lang'];
 // INFO
-$num_socio = $_POST['num_socio'];
+$num_socio = $_POST['numero_socio'];
 $correo    = $_POST['correo'];
 $nombre    = $_POST['nombre'];
-$hab       = $_POST['hab'];
+$hab       = $_POST['num_hab'];
 $hotel     = $_POST['hotel'];
 
 if ($source==1) {
@@ -27,12 +27,12 @@ if ($source==1) {
   $acumula     = $_POST['acumula'];
   $referencia  = $_POST['numero_referencia'];
 
-  $sql = "INSERT INTO `registros` (`id_hotel`, `fecha_registro`, `nombre`, `habitacion`, `correo`, `id_socio`, `correo`, `id_socio`, `acumula`, `num_referencia`) VALUES ('".$hotel."',now(),'".$nombre."','".$hab."','".$correo."','".$num_socio."','".$acumula."','".$referencia."')";
-  /*$result = $green->query($sql);
-  $latest_id = $green->insert_id;*/
+  $sql = "INSERT INTO `registros` (`id_hotel`, `fecha_registro`, `nombre`, `habitacion`, `correo`, `id_socio`, `acumula`, `num_referencia`) VALUES ('".$hotel."',now(),'".$nombre."','".$hab."','".$correo."','".$num_socio."','".$acumula."','".$referencia."')";
+  $result = $green->query($sql);
+  $latest_id = $green->insert_id;
 
   $sql_h = "INSERT INTO `historial`(`id_registro`, `id_servicio`, `fecha`) VALUES ('".$latest_id."',3,now())";
-  //$result_h = $green->query($sql_h);
+  $result_h = $green->query($sql_h);
 
   $link = "../registrado.php";
 
@@ -904,7 +904,7 @@ $row_correo = $result_correo->fetch_assoc();
             $returnpath = "-f" . $from;
            
             // Enviar correo
-        $mail = @mail($to, $subject, $message, $headers, $returnpath);
+            $mail = @mail($to, $subject, $message, $headers, $returnpath);
 
 
 
